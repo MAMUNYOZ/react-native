@@ -1,21 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useMemo } from "react";
+import { StatusBar } from "react-native";
+import {
+  Provider as PaperProvider,
+  DarkTheme as DarkThemePaper,
+  DefaultTheme as DefaultThemePaper,
+} from "react-native-paper";
+import {
+  NavigationContainer,
+  DarkTheme as DarkThemeNavigation,
+  DefaultTheme as DefaultThemeNavigation,
+} from "@react-navigation/native";
+import Navigation from "./src/navigation/Navigation";
+import PreferencesContext from "./src/context/PreferencesContext";
 
 export default function App() {
+  const [theme, setTheme] = useState("dark");
+
+  DefaultThemePaper.colors.primary = "#f77372";
+  DarkThemePaper.colors.primary = "#f77372";
+  DarkThemePaper.colors.accent = "#f77372";
+
+  DarkThemeNavigation.colors.background = "#f0eded";
+  DarkThemeNavigation.colors.card = "#15212b";
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const preference = useMemo(
+    () => ({
+      toggleTheme,
+      theme,
+    }),
+    [theme]
+  );
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PreferencesContext.Provider value={preference}>
+      <PaperProvider
+        theme={theme === "dark" ? DarkThemePaper : DefaultThemePaper}
+      >
+        <StatusBar
+          barStyle={theme === "dark" ? "light-content" : "dark-content"}
+        />
+        <NavigationContainer
+          theme={
+            theme === "dark" ? DarkThemeNavigation : DefaultThemeNavigation
+          }
+        >
+          <Navigation />
+        </NavigationContainer>
+      </PaperProvider>
+    </PreferencesContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
