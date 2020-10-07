@@ -1,0 +1,226 @@
+{
+  "products": [
+    {
+      "id": "ref-1",
+      "name": "COSME PALACIO RESERVA 2013 Y CRIANZA 2014",
+      "offer": "false",
+      "description": "Qué mejor manera de disfrutar de estas fechas tan señaladas que se avecinan que saboreando una propuesta conformada por dos tintos que suponen un antes y un después en la historia de la Rioja moderna: Cosme Palacio Crianza 2014 y Cosme Palacio Reserva 2013.Nuestra protagonista, Bodegas Palacio, puede presumir de haber actuado como punta de lanza en la modernización del vino español desde su fundación en 1894; pero igualmente figura, prácticamente un siglo más tarde, como renovadora de los vinos riojanos, gracias a la transformación enológica que asumió la casa elaboradora para concebir tintos con un estilo más fresco, con un guiño bordelés, y en los que la fruta y la complejidad dominaran en el conjunto del vino.La batuta enológica de aquella época rompedora con el pasado estaba en manos de Michel Rolland, hoy reconocido como uno de los asesores vitícolas más importantes del planeta. La modernización que provocó el enólogo bordelés en Bodegas Palacio tenía mucho que ver con las maceraciones con más extracción, con un color más profundo de los vinos, con un protagonismo primordial de la fruta y con un perfecto acompañamiento, sin obsesionar, de la madera francesa.",
+      "subdescription": "Cosme Palacio, un lujo a su alcance",
+      "stock": 12,
+      "price": "90,00",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-2",
+      "name": "DOMINIO DE FONTANA ROBLE 2018",
+      "offer": "true",
+      "description": "Tempranillo y syrah forman un buen tándem en Dominio de Fontana Roble 2018, un tinto joven nacido de viñedos plantados en la finca homónima, a una altura de entre 700 y 900 metros sobre el nivel del mar, en pleno corazón de la D.O. Uclés. Sedosa jugosidad.",
+      "subdescription": "Expresivo tinto joven de finca de Uclés",
+      "stock": 10,
+      "price": "58,60",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-3",
+      "name": "ENRIQUE MENDOZA MONASTRELL-MERLOT 2017",
+      "offer": "false",
+      "description": "El equilibrio perfecto distingue a Enrique Mendoza Monastrell-Merlot 2017, un magnífico crianza de la D.O. Vinos Alicante, elaborado por una de sus firmas más relevantes, Bodegas Enrique Mendoza.",
+      "subdescription": "Equilibrado ensamblaje alicantino",
+      "stock": 6,
+      "price": "61,20",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-4",
+      "name": "LOS LOROS LISTÁN NEGRO 2018",
+      "offer": "false",
+      "description": "Los Loros Listán Negro 2018 supone una de las novedades más destacadas de la Bodega Juan Francisco Fariña Pérez, firma de referencia de la D.O. Valle de Güímar. Con este tinto, dominado por la autóctona variedad listán negro, la casa asentada en el municipio tinerfeño de Arafo exhibe la misma maestría que en sus apreciados blancos.La clave está en el origen de las uvas, una mezcla de parcelas de bajos rendimientos y distintos suelos, ubicadas a una altitud de entre 700 y 1.300 metros sobre el nivel del mar, y en su minuciosa elaboración artesanal, que incluyó el pisado de los racimos enteros y 6 meses de crianza en barricas usadas de 225 litros. Para aquellos que quieran descubrir los atractivos tintos canarios de nueva generación.",
+      "subdescription": "Un tinto canario de nueva generación",
+      "stock": 5,
+      "price": "57,75",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-5",
+      "name": "VINYARETS 2018",
+      "offer": "false",
+      "description": "El significado de su nombre, ‘pequeños viñedos’ en catalán, da cuenta de la importancia e identificación de su origen. Vinyarets 2018 es un tinto de producción limitada perfecto para aquellos que quieran descubrir los atractivos vinos de la D.O. Penedès. La familia Torres presenta este nuevo lanzamiento que pone en valor la tradición vitivinícola milenaria de una de las regiones mediterráneas más importantes. Garnacha, tempranillo y sumoll, con una crianza parcial de 10 meses en barricas, para dar un versátil coupage de nariz fragante y boca concentrada para disfrutar sin ambages.",
+      "subdescription": "El Penedès más auténtico",
+      "stock": 9,
+      "price": "71,40",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-6",
+      "name": "ATLANTE TINTO 2017",
+      "offer": "true",
+      "description": "Atlante 2017 se distingue, como su propio nombre indica, por su clara influencia atlántica y un singular toque mineral, aportado por los suelos volcánicos que vieron nacer a las uvas de listán negro con las que fue elaborado. Un pequeño tesoro de producción limitada.",
+      "subdescription": "Tinto atlántico del Valle de la Orotava",
+      "stock": 3,
+      "price": "75,40",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-7",
+      "name": "AUCALÀ BLANC 2018",
+      "offer": "false",
+      "description": "La uva reina indiscutible de Terra Alta protagoniza en solitario Aucalà Blanc 2018, un vino blanco marcado por la frescura y la intensidad aromática. Elaborado por la interesante bodega familiar Serra i Barceló.",
+      "subdescription": "Fresco garnacha blanca de Terra Alta",
+      "stock": 11,
+      "price": "52,30",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-8",
+      "name": "MANUEL RAVENTÓS NEGRA 2012",
+      "offer": "false",
+      "description": "Manuel Raventós Negra 2012 es un espumoso magistral fruto de la selección personal de los mejores vinos de la añada por parte del director general e hijo del fundador de la emblemática bodega catalana Raventós i Blanc.",
+      "subdescription": "Excepcional espumoso de autor",
+      "stock": 20,
+      "price": "25,10",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-9",
+      "name": "O TESOURO 2017",
+      "offer": "false",
+      "description": "O Tesouro 2017 es la última añada del primer tinto que elaboró Bodegas Viña Somoza. Un vino que, como su propio nombre indica, es un auténtico tesoro por la uva con la que está hecho: la escasísima y difícil de cultivar albarello.",
+      "subdescription": "El tesoro tinto de Viña Somoza",
+      "stock": 7,
+      "price": "72,60",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-10",
+      "name": "GOMARIZ X 2018",
+      "offer": "true",
+      "description": "Elaborado con uvas procedentes de una única finca, trabajada desde un punto de vista ecológico, Gomariz X 2018 es un original vino que muestra el perfil más maduro de la albariño de interior.",
+      "subdescription": "Un albariño de Ribeiro",
+      "stock": 2,
+      "price": "83,40",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-11",
+      "name": "SENTADA SOBRE LA BESTIA 2017",
+      "offer": "true",
+      "description": "Sentada Sobre la Bestia 2017 es un equilibrado coupage de monastrell, tempranillo, garnacha tintorera, graciano y malvasía, con un marcado carácter mediterráneo. La pequeña y joven bodega de garaje Fil.loxera & Cía elabora este tinto a partir de los frutos de una selección de microparcelas ubicadas en la localidad valenciana Fontanars dels Alforins, trabajadas de forma tradicional y apenas intervencionista utilizando métodos respetuosos con el medio ambiente. El resultado en copa es un vino joven y vivo, de nariz fragante y boca jugosa, sabrosa y fresca.",
+      "subdescription": "Equilibrado y mediterráneo",
+      "stock": 6,
+      "price": "76,80",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-12",
+      "name": "ENRIQUE MENDOZA SANTA ROSA RESERVA 2016",
+      "offer": "true",
+      "description": "Elaborado a partir de los frutos de viñedos sostenibles de baja producción, Enrique Mendoza Santa Rosa Tinto Reserva 2016 es uno de los vinos de la línea premium de su bodega homónima, que conquista por su equilibrio, concentración y seriedad.",
+      "subdescription": "La joya de la familia",
+      "stock": 9,
+      "price": "63,60",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-13",
+      "name": "IZADI SELECCIÓN 2015",
+      "offer": "false",
+      "description": "Izadi Selección 2015 proviene de los mejores y más viejos viñedos que su bodega posee en el llamado triángulo de oro de Rioja Alavesa. Entre los reservas más grandes de la D.O.Ca.",
+      "subdescription": "La esencia de Izadi",
+      "stock": 11,
+      "price": "67,20",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-14",
+      "name": "HACIENDA SOLANO FINCA PEÑA LOBERA 2016",
+      "offer": "false",
+      "description": "De minuciosa elaboración y producción limitada, Hacienda Solano Finca Peña Lobera 2016 es, sin duda, uno de los mejores vinos de parcela que pueden encontrarse en la Ribera del Duero. En la senda de anteriores añadas, como la 2014, que fue valorada con 95 puntos Parker.",
+      "subdescription": "Gran ribera parcelario de viñas viejas",
+      "stock": 7,
+      "price": "59,30",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-15",
+      "name": "MUTI ALBARIÑO BLANCO 2017",
+      "offer": "false",
+      "description": "Muti Albariño Blanco 2017 es el magnífico fruto de la colaboración del afamado enólogo gallego Rodrigo Méndez y la bodega Compañía de Vinos del Atlántico. Procedente de tres viñedos singulares de entre 40 y más de 100 años de edad, ubicados en el Valle del Salnés, este albariño fresco y complejo vio la luz tras una esmerada elaboración que incluyó la maceración con pieles de las uvas y una crianza en madera de más de la mitad del vino obtenido. Para disfrutarlo ahora o en los próximos años.",
+      "subdescription": "Frescura y complejidad en un albariño de autor",
+      "stock": 3,
+      "price": "82,00",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-16",
+      "name": "LA FELISA 2018",
+      "offer": "false",
+      "description": "La Felisa 2018 es un sentido tributo y un vino innovador. Concebido en homenaje a la figura de doña Felisa, la madre de José y Javier Moro, el primer tinto ecológico y libre de sulfitos añadidos de la bodega ribereña aúna el legado familiar con la apuesta por una vitivinicultura sostenible y respetuosa con el medio ambiente.",
+      "subdescription": "El vino ecológico de Emilio Moro",
+      "stock": 6,
+      "price": "72,00",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-17",
+      "name": "VIÑAS DEL VERO PINOT NOIR 2019",
+      "offer": "false",
+      "description": "Viñas del Vero Pinot Noir 2019 es uno de los rosados más delicados y sutiles de la D.O. Somontano. Premiado en su añada 2017 con la Medalla de Oro en Le Mondial du Rosé.",
+      "subdescription": "Gran rosado del Somontano",
+      "stock": 6,
+      "price": "46,50",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-18",
+      "name": "ROGER GOULART BRUT NATURE RESERVA 2015",
+      "offer": "false",
+      "description": "Las variedades tradicionales del cava clásico, xarel·lo, macabeo y parellada, conforman Roger Goulart Brut Nature Reserva 2015, un suave y afrutadocoupage, ejemplar exponente de la casa barcelonesa Roger Goulart.",
+      "subdescription": "Coupage tradicional de una casa histórica",
+      "stock": 4,
+      "price": "62,00",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-19",
+      "name": "BELONDRADE Y LURTON 2018",
+      "offer": "false",
+      "description": "Belondrade y Lurton 2018 pertenece a la línea más emblemática de vinos que elabora en Rueda el francés Didier Belondrade. Un verdejo pionero por su influencia borgoñona que, en esta nueva añada, se promete elegante, expresivo y equilibrado.",
+      "subdescription": "Un gran verdejo de guarda",
+      "stock": 3,
+      "price": "98.70",
+      "type": "wine",
+      "total": 1
+    },
+    {
+      "id": "ref-20",
+      "name": "ROCK ANGEL 2018",
+      "offer": "true",
+      "description": "Château d’Esclans deja constancia con Rock Angel 2018 de su absoluta maestría y liderazgo en la elaboración de rosés en Côtes de Provence. Refinado y refrescante.",
+      "subdescription": "Puro rosé provenzal",
+      "stock": 10,
+      "price": "33,00",
+      "type": "wine",
+      "total": 1
+    }
+  ],
+  "users": [],
+  "orders": []
+}

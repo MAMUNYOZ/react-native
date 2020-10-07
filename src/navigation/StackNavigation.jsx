@@ -14,23 +14,25 @@ const Stack = createStackNavigator();
 export default function StackNavigation(props) {
   const { navigation } = props;
   const buttonLeft = (screen) => {
-
-    switch(screen) {
+    switch (screen) {
       case "search":
-      case "products":
-        return(
+      case "product":
+        return (
           <IconButton icon="arrow-left" onPress={() => navigation.goBack()} />
-        )
+        );
       default:
         return (
           <IconButton icon="menu" onPress={() => navigation.openDrawer()} />
-        )
+        );
     }
   };
 
   const buttonRight = () => {
     return (
-      <IconButton icon="magnify" onPress={() => navigation.navigate('search')} />
+      <IconButton
+        icon="magnify"
+        onPress={() => navigation.navigate("search")}
+      />
     );
   };
   return (
