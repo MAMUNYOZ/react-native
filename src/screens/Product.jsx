@@ -5,6 +5,7 @@ import { BASE_PATH_IMG, URL_HOST_DATA } from "../utils/constants";
 
 import useFetch from "../hooks/useFetch";
 import { Title, Text, Subheading, Paragraph, Button } from "react-native-paper";
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 export default function Product(props) {
   const { route } = props;
@@ -41,6 +42,7 @@ function ProductImage(props) {
 }
 
 function ProductInfo(props) {
+  const icon = <FontAwesome5 name={"comments"} solid />;
   const { product } = props;
   return (
     <View style={styles.viewInfo}>
@@ -52,15 +54,14 @@ function ProductInfo(props) {
       <Text style={styles.textPrice}>{product.price} €</Text>
       <Button
         style={styles.btn}
-        icon="arrow-left"
         mode="contained"
         onPress={() => console.log("Pressed")}
       >
-        Añadir al carrito
+        <FontAwesome5 name={"shopping-basket"} solid /> Añadir al carrito
       </Button>
       <Button
         style={styles.btn}
-        icon="camera"
+        icon="heart"
         mode="contained"
         onPress={() => console.log("Pressed")}
       >
