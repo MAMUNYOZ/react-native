@@ -1,56 +1,28 @@
-import React, { useState, useMemo } from "react";
-import { StatusBar } from "react-native";
-import {
-  Provider as PaperProvider,
-  DarkTheme as DarkThemePaper,
-  DefaultTheme as DefaultThemePaper,
-} from "react-native-paper";
-import {
-  NavigationContainer,
-  DarkTheme as DarkThemeNavigation,
-  DefaultTheme as DefaultThemeNavigation,
-} from "@react-navigation/native";
-import Navigation from "./src/navigation/Navigation";
-import PreferencesContext from "./src/context/PreferencesContext";
+import 'react-native-gesture-handler';
+import React from 'react';
 
-export default function App() {
-  const [theme, setTheme] = useState("dark");
+import {NavigationContainer} from '@react-navigation/native';
+import Navigation from "./navigation/Navigation";
+import {createStackNavigator} from '@react-navigation/stack';
 
-  DefaultThemePaper.colors.primary = "#f77372";
-  DarkThemePaper.colors.primary = "#f77372";
-  DarkThemePaper.colors.accent = "#f77372";
+// importar state de context
+import ServerState from './context/server/serverState';
+import OrdersState from './context/orders/ordersState';
 
-  DarkThemeNavigation.colors.background = "#f0eded";
-  DarkThemeNavigation.colors.card = "#15212b";
+const Stack = createStackNavigator();
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
-  const preference = useMemo(
-    () => ({
-      toggleTheme,
-      theme,
-    }),
-    [theme]
-  );
-
+const App = () => {
   return (
-    <PreferencesContext.Provider value={preference}>
-      <PaperProvider
-        theme={theme === "dark" ? DarkThemePaper : DefaultThemePaper}
-      >
-        <StatusBar
-          barStyle={theme === "dark" ? "light-content" : "dark-content"}
-        />
-        <NavigationContainer
-          theme={
-            theme === "dark" ? DarkThemeNavigation : DefaultThemeNavigation
-          }
-        >
-          <Navigation />
-        </NavigationContainer>
-      </PaperProvider>
-    </PreferencesContext.Provider>
+    <>
+      <ServerState>
+        <OrdersState>
+          <NavigationContainer>
+            <Navigation />
+          </NavigationContainer>
+        </OrdersState>
+      </ServerState>
+    </>
   );
-}
+};
+
+export default App;
