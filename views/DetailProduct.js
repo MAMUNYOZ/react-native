@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {Image, TouchableWithoutFeedback, View} from 'react-native';
 import {
   Container,
@@ -12,27 +12,58 @@ import {
   Body,
   Card,
   CardItem,
+  Toast
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
+import {findIndex} from 'lodash';
 
 import {BASE_PATH_IMG} from '../config/constants';
 
 import OrderContext from '../context/orders/ordersContext';
 import FavoritesContext from '../context/favorites/favoritesContext';
 
+
 const DetailProduct = () => {
   // Pedido context
-  const {product} = useContext(OrderContext);
+  const {order, product} = useContext(OrderContext);
   const {name, subdescription, description, price, id} = product;
 
   //Favorites context
-  const {saveFavorites} = useContext(FavoritesContext);
- 
+  const {favorites, saveFavorites} = useContext(FavoritesContext);
+
   const image = `${BASE_PATH_IMG}${id}.jpg`;
+
+  // Mostrar mensajes error
+  const [message, saveMesage] = useState(null);
 
   // Redireccionar
   const navigation = useNavigation();
+
+  // Almacenar en favoritos
+  const saveFavorite = (favorites, product) => {
+    if (findIndex(favorites, {'id': product.id}) < 0) {
+      saveFavorites(product);
+    }
+  };
+
+ // Comprobar si el pedido ya está en la cesta 
+  const checkOrder = (order, product) =>{
+    if (findIndex(order, {'id': product.id}) < 0) {
+      navigation.navigate('formOrder');
+    } else {
+      saveMesage('El producto ya está en la lista de la compra');
+    }
+  };
+
+  // Mostrar alertas
+  const showAlert = () => {
+    Toast.show({
+      text: message,
+      buttonText: 'OK',
+      duration: 5000,
+    });
+  };
 
   return (
     <Container style={globalStyles.container}>
@@ -55,7 +86,13 @@ const DetailProduct = () => {
                     alignItems: 'center',
                     marginLeft: 'auto',
                   }}>
-                  <Icon name="heart" style={{marginRight: 5}} onPress={() =>{ saveFavorites(product)}}/>
+                  <Icon
+                    name="heart"
+                    style={{marginRight: 5}}
+                    onPress={() => {
+                      saveFavorite(favorites, product);
+                    }}
+                  />
                   <Text>Añadir a favoritos</Text>
                 </View>
               </TouchableWithoutFeedback>
@@ -67,9 +104,10 @@ const DetailProduct = () => {
         <FooterTab>
           <Button
             style={globalStyles.button}
-            onPress={() => navigation.navigate('formOrder')}>
+            onPress={() => checkOrder(order, product)}>
             <Text style={globalStyles.buttonText}>Comprar Producto</Text>
           </Button>
+          {message && showAlert()}
         </FooterTab>
       </Footer>
     </Container>

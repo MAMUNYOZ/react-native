@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import {View, AsyncStorage} from 'react-native';
+import {View} from 'react-native';
 import {
   Container,
   Button,
@@ -13,36 +13,46 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 import ServerContext from '../context/server/serverContext';
+import {useFormik} from 'formik';
 
 const Login = () => {
   // Context de Server
   const {user, getUser} = useContext(ServerContext);
 
-  // State del formulario
-  const [email, saveEmail] = useState('');
-  const [password, savePassword] = useState('');
-
   const [message, saveMesage] = useState(null);
 
   const navigation = useNavigation();
 
-  // Cuando el usuario pulsa en acceder
-  const handleSubmit = () => {
-    if (email === '' || password === '') {
-      saveMesage('Todos los campos son obligatorios');
-      return;
-    }
+  const {values, isSubmitting, setFieldValue, handleSubmit, errors} = useFormik(
+    {
+      initialValues: {
+        email: '',
+        password: '',
+      },
+      onSubmit: (values) => {
+        const response = getUser(values).then((result) => {
+          if (result.length !== 0) {
+            // await AsyncStorage.setItem('user', response[0].id.toString())
+            navigation.navigate('home');
+          } else {
+            saveMesage('Los datos introducidos no son correctos');
+          }
+        });
+      },
+      validate: (values) => {
+        const errors = {};
+        if (
+          !values.email ||
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+        )
+          errors.email = 'Email incorrecto';
+        if (!values.password || values.password.length < 6)
+          errors.password = 'Paswword menor a 6';
 
-    const userLoged = {email, password};
-    getUser(userLoged).then((response) => {
-      if (response.length !== 0) {
-        AsyncStorage.setItem('user', response[0].id)
-        navigation.navigate('home');
-      } else {
-        saveMesage('Los datos introducidos no son correctos');
-      }
-    });
-  };
+        return errors;
+      },
+    },
+  );
 
   const showAlert = () => {
     Toast.show({
@@ -58,18 +68,30 @@ const Login = () => {
         <H1 style={globalStyles.title}> Acceso de usuarios</H1>
 
         <Form>
-          <Item inlineLabel last style={globalStyles.input}>
+          <Item
+            inlineLabel
+            last
+            style={globalStyles.input}
+            error={errors.email ? true : false}>
             <Input
               placeholder="Email"
-              onChangeText={(texto) => saveEmail(texto)}
+              value={values.email}
+              onChangeText={(text) => setFieldValue('email', text)}
             />
+            <Text>{errors.email ? errors.email : ''}</Text>
           </Item>
-          <Item inlineLabel last style={globalStyles.input}>
+          <Item
+            inlineLabel
+            last
+            style={globalStyles.input}
+            error={errors.password ? true : false}>
             <Input
               secureTextEntry={true}
               placeholder="Password"
-              onChangeText={(texto) => savePassword(texto)}
+              value={values.password}
+              onChangeText={(text) => setFieldValue('password', text)}
             />
+            <Text>{errors.password ? errors.password : ''}</Text>
           </Item>
         </Form>
         <Button

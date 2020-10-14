@@ -5,7 +5,7 @@ import {URL_HOST_DATA} from '../../config/constants';
 import ServerReducer from './serverReducer';
 import ServerContext from './serverContext';
 
-import {OBTENER_PRODUCTOS_EXITO, REGISTRAR_USUARIO, VALIDAR_USUARIO} from '../../types';
+import {OBTENER_PRODUCTOS_EXITO, REGISTRAR_USUARIO, VALIDAR_USUARIO, MODIFICAR_USUARIO} from '../../types';
 
 const ServerState = (props) => {
   // Create state inicial
@@ -39,8 +39,26 @@ const ServerState = (props) => {
       body: JSON.stringify(user),
     });
     const data = await response.json();
+
     dispatch({
       type: REGISTRAR_USUARIO,
+      payload: data,
+    });
+  };
+
+  //Función para modificar usuarios
+  const updateUser = async (user, id) => {
+    const url = `${URL_HOST_DATA}/users/${id}`;
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    });
+    const data = await response.json();
+    dispatch({
+      type: MODIFICAR_USUARIO,
       payload: data,
     });
   };
@@ -48,13 +66,19 @@ const ServerState = (props) => {
   const getUser = async (user) => {
     const { email, password } = user;
     const url = `${URL_HOST_DATA}/users?email=${email}&password=${password}`;
+    let result = [];
+    
     const response = await fetch(url);
     const data = await response.json();
-    dispatch({
-      type: VALIDAR_USUARIO,
-      payload: data,
-    });
-    return data;
+    if (data.length !=0) {
+      result = data[0];
+      dispatch({
+        type: VALIDAR_USUARIO,
+        payload: result,
+      });
+    } 
+    
+    return result;
   };
   
   return (
@@ -64,6 +88,7 @@ const ServerState = (props) => {
         user: state.user,
         getProducts,
         saveUser,
+        updateUser,
         getUser,
       }}>
       {props.children}

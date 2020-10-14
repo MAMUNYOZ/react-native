@@ -48,7 +48,7 @@ export default function StackNavigation(props) {
           onPress={() => navigation.navigate('search')}
           style={{marginRight: 15}}
         />
-        {user.length !== 0 ? (
+        {user.length && user.length !== 0 ? (
           <TouchableWithoutFeedback onPress={() => navigation.openDrawer()}>
             <View style={{flexDirection: 'row'}}>
               <Icon name="ios-person-circle" />

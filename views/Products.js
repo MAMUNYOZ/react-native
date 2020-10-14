@@ -19,8 +19,8 @@ const Products = () => {
     <Container style={globalStyles.Contenedor}>
       <Content style={{backgroundColor: '#FFF '}}>
         <List>
-          {products.map((product) => {
-            return <Product {...product} />;
+          {products.map((product, index) => {
+            return <Product {...product} key={index}/>;
           })}
         </List>
       </Content>

@@ -11,8 +11,8 @@ import ServerState from './context/server/serverState';
 import OrdersState from './context/orders/ordersState';
 import FavoritesState from './context/favorites/favoritesState'
 
-const Stack = createStackNavigator();
 
+const Stack = createStackNavigator();
 const App = () => {
   return (
     <>

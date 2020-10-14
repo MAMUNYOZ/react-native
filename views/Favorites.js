@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import {Alert, AsyncStorage} from 'react-native';
+import {Alert} from 'react-native';
 import {BASE_PATH_IMG} from '../config/constants';
 
 import {
@@ -33,8 +33,7 @@ const Favorites = () => {
           {
             text: 'Confirmar',
             onPress: () => {                
-              removeFavorites(id);
-              AsyncStorage.setItem('favorites', JSON.stringify(favorites));
+              removeFavorites(id);              
             },
           },
           {

@@ -11,10 +11,12 @@
     "server": "json-server --watch ./db/db.json --port 3005"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.9.2",
     "@react-navigation/native": "^5.7.6",
     "@react-navigation/stack": "^5.9.3",
+    "formik": "^2.2.0",
     "native-base": "^2.13.14",
     "react": "16.13.1",
     "react-native": "0.63.3",
