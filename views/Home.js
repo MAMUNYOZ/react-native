@@ -18,8 +18,8 @@ const Home = () => {
   // Context de Server
   const {products, getProducts} = useContext(ServerContext);
 
-    // Context del Pedido
-    const {} = useContext(OrderContext);
+  // Context del Pedido
+  const {} = useContext(OrderContext);
 
   useEffect(() => {
     getProducts();
@@ -38,7 +38,7 @@ const Home = () => {
 
           <ScrollView horizontal>
             {map(filter(products, 'offer'), (product, index) => {
-              return <Offers {...product} />;
+              return <Offers {...product} key={index} />;
             })}
           </ScrollView>
         </View>
@@ -49,7 +49,7 @@ const Home = () => {
 
           <List>
             {map(slice(products, 0, 8), (product, index) => {
-              return <Product {...product} />;
+              return <Product {...product} key={index}/>;
             })}
           </List>
         </View>

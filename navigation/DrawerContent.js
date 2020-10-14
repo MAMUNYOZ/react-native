@@ -1,13 +1,17 @@
 import React, {useContext, useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {DrawerContentScrollView} from '@react-navigation/drawer';
-import {Drawer, Switch, TouchableRipple, Text} from 'react-native-paper';
+import {Drawer} from 'react-native-paper';
 
 // Para mostrar la opción de resumen del pedido en el menú de navegación
 import OrderContext from '../context/orders/ordersContext';
 
+// Para saber si hay un usuario logado
+import ServerContext from '../context/server/serverContext';
+
 export default function DrawerContent(props) {
   const {order} = useContext(OrderContext);
+  const { user } = useContext(ServerContext);
   const {navigation} = props;
   const [active, setActive] = useState('home');
 
@@ -41,7 +45,8 @@ export default function DrawerContent(props) {
           />
         ) : null}
       </Drawer.Section>
-      <Drawer.Section>
+      { user.length === 0 ? (
+        <Drawer.Section>
         <Drawer.Item
           label="Login"
           active={active === 'login'}
@@ -53,6 +58,26 @@ export default function DrawerContent(props) {
           onPress={() => onChangeScreen('register')}
         />
       </Drawer.Section>
+      ): (
+        <Drawer.Section>
+        <Drawer.Item
+          label="Datos del Usuario"
+          active={active === 'dataUser'}
+          onPress={() => onChangeScreen('dataUser')}
+        />
+        <Drawer.Item
+          label="Pedidos Realizados"
+          active={active === 'ordersPalced'}
+          onPress={() => onChangeScreen('ordersPlaced')}
+        />
+        <Drawer.Item
+          label="Logout"
+          active={active === 'logout'}
+          onPress={() => onChangeScreen('logout')}
+        />
+      </Drawer.Section> 
+      ) }
+      
     </DrawerContentScrollView>
   );
 }
