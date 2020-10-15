@@ -230,60 +230,6 @@
       "telephone": "adfdesfee",
       "password": "1234567",
       "id": 1
-    },
-    {
-      "name": "b",
-      "surname": "b",
-      "address": "b",
-      "email": "b",
-      "telephone": "b",
-      "password": "123456789",
-      "id": 2
-    },
-    {
-      "name": "c",
-      "surname": "c",
-      "address": "c",
-      "email": "c",
-      "telephone": "c",
-      "password": "cccccccc",
-      "id": 3
-    },
-    {
-      "name": "m",
-      "surname": "m",
-      "address": "m",
-      "email": "m",
-      "telephone": "m",
-      "password": "1234567",
-      "id": 4
-    },
-    {
-      "name": "h",
-      "surname": "h",
-      "address": "h",
-      "email": "h",
-      "telephone": "h",
-      "password": "1234567",
-      "id": 5
-    },
-    {
-      "name": "ssded",
-      "surname": "sdsw",
-      "address": "sdsdsss",
-      "email": "sdfser",
-      "telephone": "sdfssddss",
-      "password": "sdfersf",
-      "id": 6
-    },
-    {
-      "name": "aaaaaa",
-      "surname": "aaaaaddf",
-      "address": "aaaaaa",
-      "email": "uno@dos.es",
-      "telephone": "22222dddd",
-      "password": "111111",
-      "id": 7
     }
   ],
   "orders": []

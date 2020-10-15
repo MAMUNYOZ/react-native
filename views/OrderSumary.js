@@ -21,12 +21,22 @@ import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 
 import OrderContext from '../context/orders/ordersContext';
+import ServerContext from '../context/server/serverContext';
 
 const OrderSumary = () => {
   const navigation = useNavigation();
 
   // Context del pedido
-  const {order, total, showSumary, removeProduct } = useContext(OrderContext);
+  const {
+    order,
+    total,
+    showSumary,
+    removeProduct,
+    makeOrder,
+    finishOrder,
+  } = useContext(OrderContext);
+
+  const {user} = useContext(ServerContext);
 
   useEffect(() => {
     calcTotal();
@@ -43,15 +53,28 @@ const OrderSumary = () => {
 
   // redirecciona a Realizar Compra
 
-  const makePurchase = () => {
+  const makePurchase = async (id) => {
     Alert.alert(
       'Revisa tu pedido',
       'Una vez que realices tu pedido, no podrá cambiarlo',
       [
         {
           text: 'Confirmar',
-          onPress: () => {
-            navigation.navigate('orderProgress');
+          onPress: async () => {
+            // crear un objeto con el pedido
+            const orderObj = {
+              user: id,
+              order: order,
+            };
+
+            // almacenar pedido en la base de datos
+            try {
+              const orderMaked = await makeOrder(orderObj);
+              finishOrder(orderMaked.id);
+              navigation.navigate('orderProgress');
+            } catch (error) {
+              console.log(error);
+            }
           },
         },
         {
@@ -64,24 +87,24 @@ const OrderSumary = () => {
 
   // Eliminar un producto del pedido
 
-  const confirmRemove = id => {
+  const confirmRemove = (id) => {
     Alert.alert(
-        '¿Deseas eliminar el artículo?',
-        'Una vez eliminado no se puede recuperar',
-        [
-          {
-            text: 'Confirmar',
-            onPress: () => {
-              removeProduct(id);
-            },
+      '¿Deseas eliminar el artículo?',
+      'Una vez eliminado no se puede recuperar',
+      [
+        {
+          text: 'Confirmar',
+          onPress: () => {
+            removeProduct(id);
           },
-          {
-            text: 'Cancelar',
-            style: 'cancel',
-          },
-        ],
-      );
-  }
+        },
+        {
+          text: 'Cancelar',
+          style: 'cancel',
+        },
+      ],
+    );
+  };
 
   return (
     <Container style={globalStyles.container}>
@@ -103,15 +126,23 @@ const OrderSumary = () => {
                   <Text>{name}</Text>
                   <Text>Cantidad: {amount}</Text>
                   <Text>Precio: {price} €</Text>
-                  <Button full danger style={{marginTop: 20}} onPress={ () => confirmRemove( id )}>
-                    <Text style={[globalStyles.buttonText, {color: '#FFF'}]}>Eliminar</Text>
+                  <Button
+                    full
+                    danger
+                    style={{marginTop: 20}}
+                    onPress={() => confirmRemove(id)}>
+                    <Text style={[globalStyles.buttonText, {color: '#FFF'}]}>
+                      Eliminar
+                    </Text>
                   </Button>
                 </Body>
               </ListItem>
             </List>
           );
         })}
-        <Text style={globalStyles.price}>Total a Pagar: { total .toFixed(2)} €</Text>
+        <Text style={globalStyles.price}>
+          Total a Pagar: {total.toFixed(2)} €
+        </Text>
         <Button
           onPress={() => navigation.navigate('products')}
           style={{marginTop: 30}}
@@ -121,16 +152,18 @@ const OrderSumary = () => {
           <Text>Seguir Pidiendo</Text>
         </Button>
       </Content>
-      <Footer>
-        <FooterTab>
-          <Button
-            onPress={() => makePurchase()}
-            style={globalStyles.button}
-            full>
-            <Text style={globalStyles.buttonText}>Realizar Compra</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
+      {user.length && user.length !== 0 ? (
+        <Footer>
+          <FooterTab>
+            <Button
+              onPress={() => makePurchase(user[0].id)}
+              style={globalStyles.button}
+              full>
+              <Text style={globalStyles.buttonText}>Realizar Compra</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+      ) : null}
     </Container>
   );
 };

@@ -22,6 +22,11 @@ export default (state, action) => {
         ...state,
         user: action.payload,
       };
+      case OBTENER_USUARIO_STORAGE:
+      return {
+        ...state,
+        user: action.payload,
+      };
     default:
       return state;
   }

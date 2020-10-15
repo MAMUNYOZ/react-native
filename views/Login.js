@@ -15,6 +15,8 @@ import globalStyles from '../styles/global';
 import ServerContext from '../context/server/serverContext';
 import {useFormik} from 'formik';
 
+import AsyncStorage from '@react-native-community/async-storage';
+
 const Login = () => {
   // Context de Server
   const {user, getUser} = useContext(ServerContext);
@@ -32,7 +34,8 @@ const Login = () => {
       onSubmit: (values) => {
         const response = getUser(values).then((result) => {
           if (result.length !== 0) {
-            // await AsyncStorage.setItem('user', response[0].id.toString())
+            const {email, password} = result;           
+            saveStorage( email, password  );
             navigation.navigate('home');
           } else {
             saveMesage('Los datos introducidos no son correctos');
@@ -60,6 +63,15 @@ const Login = () => {
       buttonText: 'OK',
       duration: 5000,
     });
+  };
+
+  const saveStorage =  async ( email, password ) => {
+    try{
+      await AsyncStorage.setItem('email', email);
+      await AsyncStorage.setItem('password', password);
+    } catch ( error){
+      console.log( error );
+    }
   };
 
   return (

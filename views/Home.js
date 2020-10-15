@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 
 import ServerContext from '../context/server/serverContext';
 import OrderContext from '../context/orders/ordersContext';
+import FavoritesContext from '../context/favorites/favoritesContext';
 
 import {Container, Content, List, Text, Button, Separator} from 'native-base';
 import {View, Image, ScrollView, StyleSheet} from 'react-native';
@@ -17,6 +18,8 @@ const Home = () => {
   const navigation = useNavigation();
   // Context de Server
   const {products, getProducts} = useContext(ServerContext);
+  const {getUserStorage} = useContext(ServerContext);
+  const {getFavoritesStorage} = useContext(FavoritesContext);
 
   // Context del Pedido
   const {} = useContext(OrderContext);
@@ -24,6 +27,16 @@ const Home = () => {
   useEffect(() => {
     getProducts();
   }, []);
+
+  useEffect(() => {
+    getUserStorage();
+  }, []);
+
+  useEffect(() => {
+    getFavoritesStorage();
+  }, []);
+
+
   return (
     <Container style={globalStyles.container}>
       <Content style={{backgroundColor: '#FFF '}}>

@@ -3,11 +3,14 @@ import React, {useReducer} from 'react';
 import OrderReducer from './ordersReducer';
 import OrderContext from './ordersContext';
 
+import {URL_HOST_DATA} from '../../config/constants';
+
 import {
   SELECCIONAR_PRODUCTO,
   CONFIRMAR_PEDIDO_PRODUCTO,
   MOSTRAR_RESUMEN,
   ELIMINAR_PRODUCTO,
+  COMPRA_REALIZADA
 } from '../../types';
 
 const OrderState = (props) => {
@@ -16,6 +19,7 @@ const OrderState = (props) => {
     order: [],
     product: null,
     total: 0,
+    idOrder: ''
   };
 
   // useReducer con dispatch para ejecutar las funciones
@@ -53,6 +57,28 @@ const removeProduct = id => {
   })
 }
 
+//Realizar la compra
+const makeOrder = async ( order ) =>
+{
+  const url = `${URL_HOST_DATA}/orders`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify( order ),
+  });
+  const data = await response.json();
+  return data;
+}
+
+const finishOrder = id => {
+  dispatch({
+    type: COMPRA_REALIZADA,
+    payload: id
+  })
+}
+
 
   return (
     <OrderContext.Provider
@@ -60,10 +86,13 @@ const removeProduct = id => {
         order: state.order,
         product: state.product,
         total: state.total,
+        idOrder: state.idOrder,
         selectionProduct,
         saveOrder,
         showSumary,
-        removeProduct
+        removeProduct,
+        makeOrder,
+        finishOrder
       }}>
       {props.children}
     </OrderContext.Provider>

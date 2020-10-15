@@ -61,7 +61,7 @@ const FormOrder = () => {
   // Confirmar si el pedido es correcto
   const confirmOrder = () => {
     Alert.alert(
-      '¿Deseas confirmar tu peido?',
+      '¿Deseas confirmar tu pedido?',
       'Un pedido confirmado ya no se podrá modificar',
       [
         {

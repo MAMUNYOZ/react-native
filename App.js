@@ -9,8 +9,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 // importar state de context
 import ServerState from './context/server/serverState';
 import OrdersState from './context/orders/ordersState';
-import FavoritesState from './context/favorites/favoritesState'
-
+import FavoritesState from './context/favorites/favoritesState';
 
 const Stack = createStackNavigator();
 const App = () => {
