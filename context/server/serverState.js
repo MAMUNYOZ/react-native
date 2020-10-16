@@ -10,23 +10,19 @@ import {
   REGISTRAR_USUARIO,
   VALIDAR_USUARIO,
   MODIFICAR_USUARIO,
-  ELIMINAR_USUARIO
+  ELIMINAR_USUARIO,
+  OBTENER_COMPRAS_REALIZADAS
 } from '../../types';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
 const ServerState = (props) => {
-  useEffect(() => {
-    initialState = {
-      products: [],
-      user: ['uno'],
-    };
-  }, []);
-
+  
   // Create state inicial
   let initialState = {
     products: [],
     user: [],
+    orders:[]
   };
 
   // useReducer con dispatch para ejecutar las funciones
@@ -53,6 +49,17 @@ const ServerState = (props) => {
     const data = await response.json();
     dispatch({
       type: OBTENER_PRODUCTOS_EXITO,
+      payload: data,
+    });
+  };
+
+  // Función que se ejecuta para obtener las compras realizadas por un usuario
+  const getOrders = async (idUser) => {
+    const urlOrders = `${URL_HOST_DATA}/orders?user=${idUser}`; // nos traemos todos los productos
+    const response = await fetch(urlOrders);
+    const data = await response.json();
+    dispatch({
+      type: OBTENER_COMPRAS_REALIZADAS,
       payload: data,
     });
   };
@@ -122,7 +129,9 @@ const ServerState = (props) => {
       value={{
         products: state.products,
         user: state.user,
+        orders: state.orders,
         getProducts,
+        getOrders,
         saveUser,
         updateUser,
         getUser,

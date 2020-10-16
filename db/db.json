@@ -232,5 +232,37 @@
       "id": 1
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "user": 1,
+      "order": [
+        {
+          "id": "ref-3",
+          "name": "ENRIQUE MENDOZA MONASTRELL-MERLOT 2017",
+          "offer": false,
+          "description": "El equilibrio perfecto distingue a Enrique Mendoza Monastrell-Merlot 2017, un magnífico crianza de la D.O. Vinos Alicante, elaborado por una de sus firmas más relevantes, Bodegas Enrique Mendoza.",
+          "subdescription": "Equilibrado ensamblaje alicantino",
+          "stock": 6,
+          "price": "61,20",
+          "type": "wine",
+          "total": "122.40",
+          "amount": 2
+        },
+        {
+          "id": "ref-5",
+          "name": "VINYARETS 2018",
+          "offer": false,
+          "description": "El significado de su nombre, ‘pequeños viñedos’ en catalán, da cuenta de la importancia e identificación de su origen. Vinyarets 2018 es un tinto de producción limitada perfecto para aquellos que quieran descubrir los atractivos vinos de la D.O. Penedès. La familia Torres presenta este nuevo lanzamiento que pone en valor la tradición vitivinícola milenaria de una de las regiones mediterráneas más importantes. Garnacha, tempranillo y sumoll, con una crianza parcial de 10 meses en barricas, para dar un versátil coupage de nariz fragante y boca concentrada para disfrutar sin ambages.",
+          "subdescription": "El Penedès más auténtico",
+          "stock": 9,
+          "price": "71,40",
+          "type": "wine",
+          "total": "142.80",
+          "amount": 2
+        }
+      ],
+      "total": "265.20",
+      "id": 1
+    }
+  ]
 }

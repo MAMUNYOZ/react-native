@@ -65,6 +65,11 @@ const globalStyles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     textTransform: 'uppercase'
+  },
+  textcenter: {
+    textAlign: 'center',
+    marginTop: 30,
+    marginBottom: 20,
   }
 });
 

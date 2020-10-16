@@ -12,7 +12,7 @@ import {
   Body,
   Card,
   CardItem,
-  Toast
+  Toast,
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
@@ -22,7 +22,6 @@ import {BASE_PATH_IMG} from '../config/constants';
 
 import OrderContext from '../context/orders/ordersContext';
 import FavoritesContext from '../context/favorites/favoritesContext';
-
 
 const DetailProduct = () => {
   // Pedido context
@@ -42,14 +41,14 @@ const DetailProduct = () => {
 
   // Almacenar en favoritos
   const saveFavorite = (favorites, product) => {
-    if (findIndex(favorites, {'id': product.id}) < 0) {
+    if (findIndex(favorites, {id: product.id}) < 0) {
       saveFavorites(product);
     }
   };
 
- // Comprobar si el pedido ya está en la cesta 
-  const checkOrder = (order, product) =>{
-    if (findIndex(order, {'id': product.id}) < 0) {
+  // Comprobar si el pedido ya está en la cesta
+  const checkOrder = (order, product) => {
+    if (findIndex(order, {id: product.id}) < 0) {
       navigation.navigate('formOrder');
     } else {
       saveMesage('El producto ya está en la lista de la compra');
@@ -79,20 +78,17 @@ const DetailProduct = () => {
               </Text>
               <Text style={{marginTop: 10}}> {description} </Text>
               <Text style={globalStyles.price}>Precio: {price} €</Text>
-              <TouchableWithoutFeedback>
+              <TouchableWithoutFeedback
+                onPress={() => {
+                  saveFavorite(favorites, product);
+                }}>
                 <View
                   style={{
                     flexDirection: 'row',
                     alignItems: 'center',
                     marginLeft: 'auto',
                   }}>
-                  <Icon
-                    name="heart"
-                    style={{marginRight: 5}}
-                    onPress={() => {
-                      saveFavorite(favorites, product);
-                    }}
-                  />
+                  <Icon name="heart" style={{marginRight: 5}} />
                   <Text>Añadir a favoritos</Text>
                 </View>
               </TouchableWithoutFeedback>

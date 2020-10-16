@@ -65,6 +65,7 @@ const OrderSumary = () => {
             const orderObj = {
               user: id,
               order: order,
+              total: total.toFixed(2)
             };
 
             // almacenar pedido en la base de datos

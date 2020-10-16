@@ -1,5 +1,6 @@
 import {
   OBTENER_PRODUCTOS_EXITO,
+  OBTENER_COMPRAS_REALIZADAS,
   REGISTRAR_USUARIO,
   MODIFICAR_USUARIO,
   VALIDAR_USUARIO,
@@ -13,6 +14,11 @@ export default (state, action) => {
       return {
         ...state,
         products: action.payload,
+      };
+    case OBTENER_COMPRAS_REALIZADAS:
+      return {
+        ...state,
+        orders: action.payload,
       };
     case REGISTRAR_USUARIO:
       return {

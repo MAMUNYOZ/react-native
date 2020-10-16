@@ -6,7 +6,6 @@ import {useNavigation} from '@react-navigation/native';
 import OrderContext from '../context/orders/ordersContext';
 
 const OrderProgress = () => {
-  const {idOrder} = useContext(OrderContext);
 
   const navigation = useNavigation();
 

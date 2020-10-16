@@ -26,7 +26,7 @@ const DataUser = () => {
 
   const navigation = useNavigation();
 
-  const {id, name, surname, address, email, telephone, password} = user[0];
+  const {id, name, surname, address, email, telephone, password} = user[0] || '';
 
   const {values, isSubmitting, setFieldValue, handleSubmit, errors} = useFormik(
     {

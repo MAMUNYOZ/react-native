@@ -1,11 +1,9 @@
-import React, {useContext, useEffect, Fragment} from 'react';
-import {StyleSheet} from 'react-native';
+import React, {useContext, useEffect} from 'react';
 import ServerContext from '../context/server/serverContext';
 
 import {Container, Content, List} from 'native-base';
 import globalStyles from '../styles/global';
 
-import {map, filter} from 'lodash';
 import {Product} from '../components/product';
 
 const Products = () => {
