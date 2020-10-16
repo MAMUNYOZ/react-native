@@ -3,7 +3,8 @@ import {
   CONFIRMAR_PEDIDO_PRODUCTO,
   MOSTRAR_RESUMEN,
   ELIMINAR_PRODUCTO,
-  COMPRA_REALIZADA
+  COMPRA_REALIZADA,
+  ELIMINAR_PEDIDOS
 } from '../../types';
 
 export default (state, action) => {
@@ -35,6 +36,14 @@ export default (state, action) => {
         total: 0,
         idOrder: action.payload,
       };
+      case ELIMINAR_PEDIDOS:
+        return {
+          ...state,
+          order: [],
+          product: null,
+          total: 0,
+          idOrder: ''
+        }; 
     default:
       return state;
   }

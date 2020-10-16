@@ -10,7 +10,7 @@ import {
   REGISTRAR_USUARIO,
   VALIDAR_USUARIO,
   MODIFICAR_USUARIO,
-  OBTENER_USUARIO_STORAGE,
+  ELIMINAR_USUARIO
 } from '../../types';
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -110,6 +110,13 @@ const ServerState = (props) => {
     return result;
   };
 
+  const cleanUser = () => {
+    dispatch({
+      type: ELIMINAR_USUARIO,
+      payload: '',
+    });
+  }
+
   return (
     <ServerContext.Provider
       value={{
@@ -120,6 +127,7 @@ const ServerState = (props) => {
         updateUser,
         getUser,
         getUserStorage,
+        cleanUser
       }}>
       {props.children}
     </ServerContext.Provider>

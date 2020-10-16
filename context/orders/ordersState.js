@@ -10,7 +10,8 @@ import {
   CONFIRMAR_PEDIDO_PRODUCTO,
   MOSTRAR_RESUMEN,
   ELIMINAR_PRODUCTO,
-  COMPRA_REALIZADA
+  COMPRA_REALIZADA,
+  ELIMINAR_PEDIDOS
 } from '../../types';
 
 const OrderState = (props) => {
@@ -79,6 +80,15 @@ const finishOrder = id => {
   })
 }
 
+// Limpia el contexto de pedidos
+
+const cleanOrders = () =>{
+  dispatch({
+    type: ELIMINAR_PEDIDOS,
+    payload: ''
+  })
+}
+
 
   return (
     <OrderContext.Provider
@@ -92,7 +102,8 @@ const finishOrder = id => {
         showSumary,
         removeProduct,
         makeOrder,
-        finishOrder
+        finishOrder,
+        cleanOrders
       }}>
       {props.children}
     </OrderContext.Provider>

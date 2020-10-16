@@ -1,6 +1,6 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Container, Text, h1, H3, Button} from 'native-base';
+import {Container, Text, Button} from 'native-base';
 import globalStyles from '../styles/global';
 import {useNavigation} from '@react-navigation/native';
 import OrderContext from '../context/orders/ordersContext';

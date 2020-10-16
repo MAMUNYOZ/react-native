@@ -1,4 +1,11 @@
-import {OBTENER_PRODUCTOS_EXITO, REGISTRAR_USUARIO, MODIFICAR_USUARIO, VALIDAR_USUARIO} from '../../types';
+import {
+  OBTENER_PRODUCTOS_EXITO,
+  REGISTRAR_USUARIO,
+  MODIFICAR_USUARIO,
+  VALIDAR_USUARIO,
+  OBTENER_USUARIO_STORAGE,
+  ELIMINAR_USUARIO,
+} from '../../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -12,7 +19,7 @@ export default (state, action) => {
         ...state,
         user: [action.payload],
       };
-      case MODIFICAR_USUARIO:
+    case MODIFICAR_USUARIO:
       return {
         ...state,
         user: [action.payload],
@@ -22,10 +29,15 @@ export default (state, action) => {
         ...state,
         user: action.payload,
       };
-      case OBTENER_USUARIO_STORAGE:
+    case OBTENER_USUARIO_STORAGE:
       return {
         ...state,
         user: action.payload,
+      };
+    case ELIMINAR_USUARIO:
+      return {
+        ...state,
+        user: [],
       };
     default:
       return state;

@@ -9,6 +9,7 @@ import {
   GUARDAR_FAVORITOS,
   ELIMINAR_PRODUCTO_FAVORITO,
   OBTENER_FAVORITOS_STORAGE,
+  ELIMINAR_FAVORITOS,
 } from '../../types';
 
 const FavoritesState = (props) => {
@@ -81,6 +82,15 @@ const FavoritesState = (props) => {
     });
   };
 
+  // Limpiamos el contexto de favoritos
+
+  const cleanFavorites = () =>{
+    dispatch({
+      type: ELIMINAR_FAVORITOS,
+      payload: '',
+    });
+  }
+
   return (
     <FavoritesContext.Provider
       value={{
@@ -88,6 +98,7 @@ const FavoritesState = (props) => {
         saveFavorites,
         removeFavorites,
         getFavoritesStorage,
+        cleanFavorites
       }}>
       {props.children}
     </FavoritesContext.Provider>
