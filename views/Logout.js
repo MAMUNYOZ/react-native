@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {Container, Text, Button} from 'native-base';
 import globalStyles from '../styles/global';
 import {useNavigation} from '@react-navigation/native';
@@ -31,6 +31,10 @@ const Logout = () => {
     return (
         <Container style={globalStyles.container}>
         <View style={[globalStyles.content, {marginTop: 80}]}>
+        <Image
+          style={globalStyles.logo}
+          source={require('../assets/imgs/logo.png')}
+        />
           <Text style={styles.textCenter}>Los datos se han borrado correctamente</Text>
           <Text style={styles.textBold}>
             Gracias por utilizar nuestro servicio

@@ -9,6 +9,7 @@ import {
   Form,
   Item,
   Toast,
+  Icon
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
@@ -80,7 +81,7 @@ const Register = () => {
     <Container>
       <View style={globalStyles.loginContainer}>
         <ScrollView>
-          <H1 style={globalStyles.title}> Registro de Usuarios</H1>
+        <H1 style={globalStyles.title}> <Icon name="md-person-circle-outline"/> Registro de Usuarios</H1>
 
           <Form>
             <Item

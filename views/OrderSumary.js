@@ -15,6 +15,7 @@ import {
   H1,
   Footer,
   FooterTab,
+  Icon
 } from 'native-base';
 
 import {useNavigation} from '@react-navigation/native';
@@ -110,7 +111,7 @@ const OrderSumary = () => {
   return (
     <Container style={globalStyles.container}>
       <Content style={globalStyles.content}>
-        <H1 style={globalStyles.title}>Resumen del Pedido</H1>
+        <H1 style={globalStyles.title}><Icon name="md-document-text-outline"/> Resumen del Pedido</H1>
         {order.map((product, i) => {
           const {amount, name, id, price} = product;
           return (

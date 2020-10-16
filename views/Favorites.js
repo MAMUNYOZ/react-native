@@ -7,6 +7,7 @@ import {
   Content,
   Thumbnail,
   List,
+  Icon,
   ListItem,
   Body,
   Button,
@@ -55,7 +56,7 @@ const Favorites = () => {
   return (
     <Container style={globalStyles.container}>
       <Content style={globalStyles.content}>
-        <H1 style={globalStyles.title}>Favoritos</H1>
+        <H1 style={globalStyles.title}><Icon name="md-star-outline"/> Favoritos</H1>
         {favorites.length === 0 ? (
           <Text style={globalStyles.price}>
             No has añadido ningún producto a favoritos

@@ -9,6 +9,7 @@ import {
   Form,
   Item,
   Toast,
+  Icon
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
@@ -77,7 +78,7 @@ const Login = () => {
   return (
     <Container>
       <View style={globalStyles.loginContainer}>
-        <H1 style={globalStyles.title}> Acceso de usuarios</H1>
+        <H1 style={globalStyles.title}> <Icon name="lock-closed"/> Acceso de usuarios</H1>
 
         <Form>
           <Item

@@ -263,6 +263,82 @@
       ],
       "total": "265.20",
       "id": 1
+    },
+    {
+      "user": 1,
+      "order": [
+        {
+          "id": "ref-1",
+          "name": "COSME PALACIO RESERVA 2013 Y CRIANZA 2014",
+          "offer": false,
+          "description": "Qué mejor manera de disfrutar de estas fechas tan señaladas que se avecinan que saboreando una propuesta conformada por dos tintos que suponen un antes y un después en la historia de la Rioja moderna: Cosme Palacio Crianza 2014 y Cosme Palacio Reserva 2013.Nuestra protagonista, Bodegas Palacio, puede presumir de haber actuado como punta de lanza en la modernización del vino español desde su fundación en 1894; pero igualmente figura, prácticamente un siglo más tarde, como renovadora de los vinos riojanos, gracias a la transformación enológica que asumió la casa elaboradora para concebir tintos con un estilo más fresco, con un guiño bordelés, y en los que la fruta y la complejidad dominaran en el conjunto del vino.La batuta enológica de aquella época rompedora con el pasado estaba en manos de Michel Rolland, hoy reconocido como uno de los asesores vitícolas más importantes del planeta. La modernización que provocó el enólogo bordelés en Bodegas Palacio tenía mucho que ver con las maceraciones con más extracción, con un color más profundo de los vinos, con un protagonismo primordial de la fruta y con un perfecto acompañamiento, sin obsesionar, de la madera francesa.",
+          "subdescription": "Cosme Palacio, un lujo a su alcance",
+          "stock": 12,
+          "price": "90,00",
+          "type": "wine",
+          "total": "270.00",
+          "amount": 3
+        }
+      ],
+      "total": "270.00",
+      "id": 2
+    },
+    {
+      "user": 1,
+      "order": [
+        {
+          "id": "ref-1",
+          "name": "COSME PALACIO RESERVA 2013 Y CRIANZA 2014",
+          "offer": false,
+          "description": "Qué mejor manera de disfrutar de estas fechas tan señaladas que se avecinan que saboreando una propuesta conformada por dos tintos que suponen un antes y un después en la historia de la Rioja moderna: Cosme Palacio Crianza 2014 y Cosme Palacio Reserva 2013.Nuestra protagonista, Bodegas Palacio, puede presumir de haber actuado como punta de lanza en la modernización del vino español desde su fundación en 1894; pero igualmente figura, prácticamente un siglo más tarde, como renovadora de los vinos riojanos, gracias a la transformación enológica que asumió la casa elaboradora para concebir tintos con un estilo más fresco, con un guiño bordelés, y en los que la fruta y la complejidad dominaran en el conjunto del vino.La batuta enológica de aquella época rompedora con el pasado estaba en manos de Michel Rolland, hoy reconocido como uno de los asesores vitícolas más importantes del planeta. La modernización que provocó el enólogo bordelés en Bodegas Palacio tenía mucho que ver con las maceraciones con más extracción, con un color más profundo de los vinos, con un protagonismo primordial de la fruta y con un perfecto acompañamiento, sin obsesionar, de la madera francesa.",
+          "subdescription": "Cosme Palacio, un lujo a su alcance",
+          "stock": 12,
+          "price": "90,00",
+          "type": "wine",
+          "total": "90.00",
+          "amount": 1
+        }
+      ],
+      "total": "90.00",
+      "id": 3
+    },
+    {
+      "user": 1,
+      "order": [
+        {
+          "id": "ref-2",
+          "name": "DOMINIO DE FONTANA ROBLE 2018",
+          "offer": true,
+          "description": "Tempranillo y syrah forman un buen tándem en Dominio de Fontana Roble 2018, un tinto joven nacido de viñedos plantados en la finca homónima, a una altura de entre 700 y 900 metros sobre el nivel del mar, en pleno corazón de la D.O. Uclés. Sedosa jugosidad.",
+          "subdescription": "Expresivo tinto joven de finca de Uclés",
+          "stock": 10,
+          "price": "58,60",
+          "type": "wine",
+          "total": "58.60",
+          "amount": 1
+        }
+      ],
+      "total": "58.60",
+      "id": 4
+    },
+    {
+      "user": 1,
+      "order": [
+        {
+          "id": "ref-2",
+          "name": "DOMINIO DE FONTANA ROBLE 2018",
+          "offer": true,
+          "description": "Tempranillo y syrah forman un buen tándem en Dominio de Fontana Roble 2018, un tinto joven nacido de viñedos plantados en la finca homónima, a una altura de entre 700 y 900 metros sobre el nivel del mar, en pleno corazón de la D.O. Uclés. Sedosa jugosidad.",
+          "subdescription": "Expresivo tinto joven de finca de Uclés",
+          "stock": 10,
+          "price": "58,60",
+          "type": "wine",
+          "total": "58.60",
+          "amount": 1
+        }
+      ],
+      "total": "58.60",
+      "id": 5
     }
   ]
 }

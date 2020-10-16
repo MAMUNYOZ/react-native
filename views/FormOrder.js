@@ -92,7 +92,7 @@ const FormOrder = () => {
     <Container>
       <Content>
         <Form>
-          <Text style={globalStyles.title}>Cantidad</Text>
+          <Text style={globalStyles.title}><Icon name="md-albums-outline"/> Cantidad</Text>
           <Grid>
             <Col>
               <Button

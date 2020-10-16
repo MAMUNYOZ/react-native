@@ -9,7 +9,7 @@ import {Order} from '../components/order';
 const OrdersPlaced = () => {
   // Context de Server
   const {user, orders, getOrders} = useContext(ServerContext);
-  const {id} = user[0];
+  const {id} = user[0] || '';
   useEffect(() => {
     getOrders(id);
   }, [orders]);
@@ -32,7 +32,7 @@ const OrdersPlaced = () => {
   return (
     <Container style={globalStyles.container}>
       <Content padder style={globalStyles.content}>
-        <H1 style={globalStyles.title}>Pedidos Realizados</H1>
+        <H1 style={globalStyles.title}><Icon name="md-gift-outline"/> Pedidos Realizados</H1>
         {orders.length !== 0 ? (
           <Accordion
             dataArray={dataArray}

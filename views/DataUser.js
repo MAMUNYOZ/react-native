@@ -9,6 +9,7 @@ import {
   Form,
   Item,
   Toast,
+  Icon
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
@@ -84,7 +85,7 @@ const DataUser = () => {
     <Container>
       <View style={globalStyles.loginContainer}>
         <ScrollView>
-          <H1 style={globalStyles.title}> Modificación de datos</H1>
+          <H1 style={globalStyles.title}> <Icon name="md-person-circle-outline"/>Modificación de datos</H1>
 
           <Form>
             <Item
