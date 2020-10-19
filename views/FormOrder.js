@@ -93,7 +93,7 @@ const FormOrder = () => {
       <Content>
         <Form>
           <Text style={globalStyles.title}><Icon name="md-albums-outline"/> Cantidad</Text>
-          <Grid>
+          <Grid style={{paddingLeft: 50}}>
             <Col>
               <Button
                 props
@@ -105,7 +105,7 @@ const FormOrder = () => {
             </Col>
             <Col>
               <Input
-                style={{textAlign: 'center', fontSize: 20}}
+                style={{textAlign: 'center', fontSize: 20, paddingRight:50}}
                 value={amount.toString()}
                 keyboardType="numeric"
                 onChangeText={(amount) => saveAmount(amount)}
